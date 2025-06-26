@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes</title>
+    <link rel="stylesheet" href="../../includes/styles.css">
+    <!-- Agregar íconos de Font Awesome (para los íconos de teléfono, dirección, WhatsApp, horarios) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Barra de navegación superior -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- Convertimos los botones en enlaces con iconos -->
+            <a href="index.html" class="navbar-link-with-icon"><i class="fas fa-home"></i> Inicio</a>
+            <a href="planf.html" class="navbar-link-with-icon"><i class="fas fa-network-wired"></i> Planes</a>
+            <a href="instalacion.html" class="navbar-link-with-icon">
+                <i class="fas fa-tools"></i> Instalación
+            </a>
+        </div>
+        <div class="navbar-center">
+            <span class="navbar-title">Neo Internet <i class="fas fa-wifi"></i></span> <!-- Icono de wifi -->
+        </div>
+        <div class="navbar-right">
+            <div class="dropdown">
+                <!-- Imagen que actúa como botón para abrir el menú -->
+                <img src="../../includes/img/perfilno.jpg" alt="Menú" class="dropdown-btn" onclick="toggleMenu()" />
+                <div class="dropdown-content" id="dropdown-menu">
+                    <a href="#">Perfil</a>
+                    <a href="#">Cambiar Plan</a>
+                    <a href="#">Soporte</a>
+                    <a href="#">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Contenedor de los planes -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <br><br>
+            <h2>¡Explora nuestros planes variados!</h2>
+            <p>Con estos planes podrás disfrutar de una experiencia más cómoda según tus requerimientos</p>
+            <a href="#selecciona-loc" class="btn-cta">Ver planes</a>
+        </div>
+            <!-- Botones para seleccionar ciudad y tipo de conexión -->
+            <div class="selection-container">
+                <!-- Selector de ciudad -->
+                <label for="ciudad">Selecciona tu ciudad:</label>
+                <select id="ciudad" class="city-select">
+                    <option value="chacabuco">Chacabuco</option>
+                    <option value="buenos-aires">Buenos Aires</option>
+                    <option value="cordoba">Córdoba</option>
+                    <option value="rosario">Rosario</option>
+                </select>
+            </div>
+            <div class="selection-container">
+                <!-- Selector de tipo de conexión -->
+                <label for="conexion">Selecciona tipo de conexión:</label>
+                <select id="conexion" class="city-select">
+                    <option value="antena">Antena</option>
+                    <option value="fibra">Fibra</option>
+                </select>
+            </div>
+    </section>
+    <div class="container">
+        <div class="plan" id="plan1">
+            <h3>Plan 40MB</h3>
+            <p id="plan1-description">$13.000/mes</p>
+            <button onclick="verMas(1)">Ver más</button>
+            <button onclick="verMenos(1)" class="btn-ver-menos" style="display:none;">Ver menos</button>
+            <button class="btn-suscribir" onclick="suscribir(1)">Suscribirse</button>
+        </div>
+        <div class="plan" id="plan2">
+            <h3>Plan 90MB</h3>
+            <p id="plan2-description">$18.000/mes</p>
+            <button onclick="verMas(2)">Ver más</button>
+            <button onclick="verMenos(2)" class="btn-ver-menos" style="display:none;">Ver menos</button>
+            <button class="btn-suscribir" onclick="suscribir(2)">Suscribirse</button>
+        </div>
+        <div class="plan" id="plan3">
+            <h3>Plan 300MB</h3>
+            <p id="plan3-description">$29.000/mes</p>
+            <button onclick="verMas(3)">Ver más</button>
+            <button onclick="verMenos(3)" class="btn-ver-menos" style="display:none;">Ver menos</button>
+            <button class="btn-suscribir" onclick="suscribir(3)">Suscribirse</button>
+        </div>
+    </div>
+    <section class="hero-section">
+        <div class="hero-text">
+            <h2>¿Todavia no eres cliente?</h2>
+            <p>Para ser cliente debes pedir primero un turno por una instalacion.</p>
+            <a href="instalacion.html" class="btn-cta">Pedir turno</a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p><i class="fas fa-phone-alt"></i> Teléfono: <span id="telefono">+52 9 2352 470447</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: <span id="direccion1">Avenida Solis 138, Chacabuco, Argentina</span></p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <span id="whatsapp">+52 9 2352 448038</span></p>
+            <!-- Nuevo campo Horarios -->
+            <p><i class="fas fa-clock"></i> Horarios: <span id="horarios">Lunes a Viernes, 8:00 AM - 14:00 PM</span></p>
+        </div>
+        <div class="footer-right">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoZzF_9di9YgR66ZlX-x-Mhk&key=TU_API_KEY" 
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+
+
+
+
+    <script src="../../actions/scripts.js"></script>
+</body>
+</html>

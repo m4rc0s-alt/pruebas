@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Selecciona tu Ciudad</title>
+    <link rel="stylesheet" href="../../includes/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Incluye la API de Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- Enlaces con iconos -->
+            <a href="index.html" class="navbar-link-with-icon"><i class="fas fa-home"></i> Inicio</a>
+            <a href="planf.html" class="navbar-link-with-icon"><i class="fas fa-network-wired"></i> Planes</a>
+            <a href="instalacion.html" class="navbar-link-with-icon">
+                <i class="fas fa-tools"></i> Instalación
+            </a>
+        </div>
+        <div class="navbar-center">
+            <span class="navbar-title">Neo Internet <i class="fas fa-wifi"></i></span> <!-- Icono de wifi -->
+        </div>
+        <div class="navbar-right">
+            <div class="dropdown">
+                <!-- Imagen que actúa como botón para abrir el menú -->
+                <img src="../../includes/img/perfilno.jpg" alt="Menú" class="dropdown-btn" onclick="toggleMenu()" />
+                <div class="dropdown-content" id="dropdown-menu">
+                    <a href="#">Perfil</a>
+                    <a href="#">Cambiar Plan</a>
+                    <a href="#">Soporte</a>
+                    <a href="#">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Sección de inicio -->
+    <section id="inicio" class="inicio-container">
+        <div class="map-container">
+
+            <section class="hero-section">
+                <div class="hero-text">
+                    <h2>¡Conéctate al futuro con Neo Internet!</h2>
+                    <p>Planes flexibles y tecnología avanzada para tu hogar o empresa.</p>
+                    <a href="#selecciona-loc" class="btn-cta">Ver Cobertura</a>
+                </div>
+            </section>
+            <br><br><br><br><br><br><br><br id="selecciona-loc">
+            <br>
+            <br>
+            <!-- Texto de bienvenida -->
+            <p class="welcome-text">¿En que ciudades tiene cobertura?</p>
+            
+            <h2>Selecciona tu Localidad</h2>
+            <!-- Selector de ciudad -->
+            <select id="ciudad" class="city-select">
+                <option value="chacabuco">Chacabuco</option>
+                <option value="chivilcoy">Chivilcoy</option>
+                <option value="irala">Irala</option>
+                <option value="ines_indart">Ines Indart</option>
+                <option value="ohiggins">Ohiggins</option>
+                <option value="coronel_mom">Coronel Mom</option>
+                <option value="segui">Segui</option>
+                <option value="alberti">Alberti</option>
+            </select>
+            
+            <!-- Marcos agregar mapa de google en algun momento necesitas la API -->
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </div>
+
+
+        <!-- Ingresar dirección -->
+        <div class="address-container">
+            <h3>Ingresa tu Dirección</h3>
+            <input type="text" id="direccion" placeholder="Ejemplo: Calle Falsa 123" />
+            <button onclick="guardarDireccion()">Buscar Direccion</button>
+        </div>
+
+        <!-- Descripción de los servicios -->
+        <div class="company-description">
+            <p><b>Neo Internet</b> es una empresa líder en la provisión de servicios de conectividad, ofreciendo soluciones de internet tanto por <b>antena</b> como por <b>fibra óptica</b>. Nuestro objetivo es brindarte la mejor experiencia de navegación, con opciones flexibles que se adaptan a tus necesidades.</p>
+            <p>Con <b>antena</b>, puedes disfrutar de internet de alta velocidad en áreas donde la fibra óptica aún no está disponible, garantizando una conexión estable y rápida en cualquier lugar. Mientras que con <b>fibra óptica</b>, accederás a una conexión ultrarrápida y sin interrupciones, ideal para hogares y empresas que demandan un ancho de banda elevado y una velocidad constante.</p>
+            <p>Ya sea que necesites trabajar, estudiar, o simplemente disfrutar de tus contenidos favoritos, en <b>Neo Internet</b> tenemos la tecnología adecuada para ti. ¡Conéctate con nosotros y experimenta el futuro de internet!</p>
+        </div>
+    </section>
+
+    <!-- Agamos de cuenta que es el footer pero no sirve -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p><i class="fas fa-phone-alt"></i> Teléfono: <span id="telefono">+52 9 2352 470447</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> Dirección: <span id="direccion1">Avenida Solis 138, Chacabuco, Argentina</span></p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: <span id="whatsapp">+52 9 2352 448038</span></p>
+            <p><i class="fas fa-clock"></i> Horarios: <span id="horarios">Lunes a Viernes, 8:00 AM - 14:00 PM</span></p>
+        </div>
+        <div class="footer-right">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoZzF_9di9YgR66ZlX-x-Mhk&key=TU_API_KEY" 
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+
+    <script src="../../actions/scripts.js"></script>
+</body>
+</html>
