@@ -51,32 +51,15 @@
             <br><br><br><br><br><br><br><br id="selecciona-loc">
             <br>
             <br>
-            <!-- Texto de bienvenida -->
-            <p class="welcome-text">¿En que ciudades tiene cobertura?</p>
-            
-            <h2>Selecciona tu Localidad</h2>
-            <!-- Selector de ciudad -->
-            <select id="ciudad" class="city-select">
-                <option value="chacabuco">Chacabuco</option>
-                <option value="chivilcoy">Chivilcoy</option>
-                <option value="irala">Irala</option>
-                <option value="ines_indart">Ines Indart</option>
-                <option value="ohiggins">Ohiggins</option>
-                <option value="coronel_mom">Coronel Mom</option>
-                <option value="segui">Segui</option>
-                <option value="alberti">Alberti</option>
-            </select>
+            <!-- Busqueda de ciudad -->
+            <div class="address-container">
+                <h3>Ingresa tu Dirección</h3>
+                <input type="text" id="direccion" placeholder="Ejemplo: Calle Falsa 123" />
+                <button onclick="guardarDireccion()">Buscar Direccion</button>
+            </div>
             
             <!-- Marcos agregar mapa de google en algun momento necesitas la API -->
             <div id="map" style="height: 400px; width: 100%;"></div>
-        </div>
-
-
-        <!-- Ingresar dirección -->
-        <div class="address-container">
-            <h3>Ingresa tu Dirección</h3>
-            <input type="text" id="direccion" placeholder="Ejemplo: Calle Falsa 123" />
-            <button onclick="guardarDireccion()">Buscar Direccion</button>
         </div>
 
         <!-- Descripción de los servicios -->
